@@ -15,6 +15,8 @@ void Ecalc::calculate(double in, double out, double es, double maxR){
   series = es;
   maxResistance = maxR;
   calc();
+  
+  
 }
 
 double Ecalc::getResistor1(){
