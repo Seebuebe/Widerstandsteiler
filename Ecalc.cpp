@@ -4,6 +4,7 @@
 
 using namespace std;
 
+const int Ecalc::seriesLookup[]  = {3,6,12,24,48,96,192};
 
 Ecalc::Ecalc() {
 

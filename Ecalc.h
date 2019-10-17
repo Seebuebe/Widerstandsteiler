@@ -32,8 +32,9 @@ class Ecalc {
     double error;
     int series;
 
-    int seriesLookup[7] = {3,6,12,24,48,96,192};
+    static const int seriesLookup[];
 
+    double e3[3] = {1.0,2.2,4.7};
     double e6[6] = {1.0, 1.5, 2.2, 3.3, 4.7, 6.8};
     double e12[12] = {1.0, 1.2, 1.5, 1.8, 2.2, 2.7, 3.3, 3.9, 4.7, 5.6, 6.8, 8.2};
     double e24[24] = {1.0, 1.1, 1.2, 1.3, 1.5, 1.6, 1.8, 2.0, 2.2, 2.4, 2.7, 3.0,
