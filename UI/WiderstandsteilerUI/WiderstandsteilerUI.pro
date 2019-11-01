@@ -30,8 +30,7 @@ HEADERS += \
         Widerstandsteiler.h
 
 FORMS += \
-        Widerstandsteiler.ui \
-    Dialog.ui
+        Widerstandsteiler.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

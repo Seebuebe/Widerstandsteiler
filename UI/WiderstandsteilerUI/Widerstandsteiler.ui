@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>906</width>
-    <height>402</height>
+    <width>818</width>
+    <height>448</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -40,24 +40,11 @@
      <string>Tolleranz</string>
     </property>
    </widget>
-   <widget class="QLabel" name="Res1">
-    <property name="geometry">
-     <rect>
-      <x>650</x>
-      <y>150</y>
-      <width>67</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Res1</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="Res2">
     <property name="geometry">
      <rect>
-      <x>650</x>
-      <y>180</y>
+      <x>480</x>
+      <y>230</y>
       <width>67</width>
       <height>17</height>
      </rect>
@@ -141,13 +128,42 @@
      </item>
     </layout>
    </widget>
+   <widget class="QLabel" name="Picture">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>0</y>
+      <width>91</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>Images/Widerstand.svg</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Res1">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>100</y>
+      <width>67</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Res1</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>906</width>
+     <width>818</width>
      <height>22</height>
     </rect>
    </property>
