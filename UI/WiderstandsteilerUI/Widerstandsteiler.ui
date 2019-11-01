@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>818</width>
+    <width>635</width>
     <height>448</height>
    </rect>
   </property>
@@ -17,7 +17,7 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>20</x>
       <y>310</y>
       <width>89</width>
       <height>21</height>
@@ -30,8 +30,8 @@
    <widget class="QLabel" name="Tolleranz">
     <property name="geometry">
      <rect>
-      <x>650</x>
-      <y>100</y>
+      <x>470</x>
+      <y>90</y>
       <width>67</width>
       <height>17</height>
      </rect>
@@ -40,24 +40,11 @@
      <string>Tolleranz</string>
     </property>
    </widget>
-   <widget class="QLabel" name="Res2">
-    <property name="geometry">
-     <rect>
-      <x>480</x>
-      <y>230</y>
-      <width>67</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Res2</string>
-    </property>
-   </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>41</y>
+      <x>20</x>
+      <y>51</y>
       <width>202</width>
       <height>224</height>
      </rect>
@@ -122,40 +109,70 @@
         </widget>
        </item>
        <item>
-        <widget class="QSpinBox" name="NormReihe"/>
+        <widget class="QSpinBox" name="NormReihe">
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="prefix">
+          <string>E</string>
+         </property>
+         <property name="EReihen" stdset="0">
+          <stringlist>
+           <string>E3</string>
+           <string>E6</string>
+           <string>E12</string>
+           <string>E24</string>
+           <string>E48</string>
+           <string>E96</string>
+           <string>E192</string>
+          </stringlist>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
     </layout>
    </widget>
-   <widget class="QLabel" name="Picture">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>0</y>
-      <width>91</width>
-      <height>341</height>
+      <x>260</x>
+      <y>60</y>
+      <width>181</width>
+      <height>270</height>
      </rect>
     </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>Images/Widerstand.svg</pixmap>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Res1">
-    <property name="geometry">
-     <rect>
-      <x>480</x>
-      <y>100</y>
-      <width>67</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Res1</string>
-    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="Picture">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>Images/Widerstand.svg</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_6">
+       <item>
+        <widget class="QLabel" name="Res1">
+         <property name="text">
+          <string>Res1</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="Res2">
+         <property name="text">
+          <string>Res2</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+    <zorder>Picture</zorder>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -163,7 +180,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>818</width>
+     <width>635</width>
      <height>22</height>
     </rect>
    </property>
@@ -179,6 +196,14 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>UinStr</tabstop>
+  <tabstop>UoutStr</tabstop>
+  <tabstop>MaxResStr</tabstop>
+  <tabstop>MaxResExp</tabstop>
+  <tabstop>NormReihe</tabstop>
+  <tabstop>pushButton</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
