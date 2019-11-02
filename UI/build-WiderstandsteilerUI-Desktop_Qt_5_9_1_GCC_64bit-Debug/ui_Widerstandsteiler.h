@@ -33,9 +33,6 @@ class Ui_Widerstandsteiler
 public:
     QWidget *centralWidget;
     QPushButton *pushButton;
-    QLabel *Tolleranz;
-    QLabel *Res1;
-    QLabel *Res2;
     QWidget *layoutWidget;
     QVBoxLayout *verticalLayout_5;
     QVBoxLayout *verticalLayout_4;
@@ -53,6 +50,21 @@ public:
     QLabel *EReihe;
     QSpinBox *NormReihe;
     QLabel *Picture;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout_9;
+    QVBoxLayout *verticalLayout_6;
+    QLabel *Res1Lable;
+    QLabel *Res1;
+    QVBoxLayout *verticalLayout_7;
+    QLabel *UoutLable;
+    QLabel *UoutVal;
+    QVBoxLayout *verticalLayout_8;
+    QLabel *label_4;
+    QLabel *Res2;
+    QWidget *widget1;
+    QVBoxLayout *verticalLayout_10;
+    QLabel *FehlerLable;
+    QLabel *FehlerVal;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -61,24 +73,15 @@ public:
     {
         if (Widerstandsteiler->objectName().isEmpty())
             Widerstandsteiler->setObjectName(QStringLiteral("Widerstandsteiler"));
-        Widerstandsteiler->resize(818, 448);
+        Widerstandsteiler->resize(639, 448);
         centralWidget = new QWidget(Widerstandsteiler);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(30, 310, 89, 21));
-        Tolleranz = new QLabel(centralWidget);
-        Tolleranz->setObjectName(QStringLiteral("Tolleranz"));
-        Tolleranz->setGeometry(QRect(650, 100, 67, 17));
-        Res1 = new QLabel(centralWidget);
-        Res1->setObjectName(QStringLiteral("Res1"));
-        Res1->setGeometry(QRect(480, 100, 67, 17));
-        Res2 = new QLabel(centralWidget);
-        Res2->setObjectName(QStringLiteral("Res2"));
-        Res2->setGeometry(QRect(480, 230, 67, 17));
+        pushButton->setGeometry(QRect(70, 309, 89, 21));
         layoutWidget = new QWidget(centralWidget);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(150, 41, 202, 224));
+        layoutWidget->setGeometry(QRect(70, 50, 121, 224));
         verticalLayout_5 = new QVBoxLayout(layoutWidget);
         verticalLayout_5->setSpacing(6);
         verticalLayout_5->setContentsMargins(11, 11, 11, 11);
@@ -161,12 +164,86 @@ public:
 
         Picture = new QLabel(centralWidget);
         Picture->setObjectName(QStringLiteral("Picture"));
-        Picture->setGeometry(QRect(380, 0, 91, 341));
+        Picture->setGeometry(QRect(240, 20, 91, 341));
         Picture->setPixmap(QPixmap(QString::fromUtf8("Images/Widerstand.svg")));
+        widget = new QWidget(centralWidget);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(340, 70, 136, 241));
+        verticalLayout_9 = new QVBoxLayout(widget);
+        verticalLayout_9->setSpacing(6);
+        verticalLayout_9->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_9->setObjectName(QStringLiteral("verticalLayout_9"));
+        verticalLayout_9->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_6 = new QVBoxLayout();
+        verticalLayout_6->setSpacing(6);
+        verticalLayout_6->setObjectName(QStringLiteral("verticalLayout_6"));
+        Res1Lable = new QLabel(widget);
+        Res1Lable->setObjectName(QStringLiteral("Res1Lable"));
+
+        verticalLayout_6->addWidget(Res1Lable);
+
+        Res1 = new QLabel(widget);
+        Res1->setObjectName(QStringLiteral("Res1"));
+
+        verticalLayout_6->addWidget(Res1);
+
+
+        verticalLayout_9->addLayout(verticalLayout_6);
+
+        verticalLayout_7 = new QVBoxLayout();
+        verticalLayout_7->setSpacing(6);
+        verticalLayout_7->setObjectName(QStringLiteral("verticalLayout_7"));
+        UoutLable = new QLabel(widget);
+        UoutLable->setObjectName(QStringLiteral("UoutLable"));
+
+        verticalLayout_7->addWidget(UoutLable);
+
+        UoutVal = new QLabel(widget);
+        UoutVal->setObjectName(QStringLiteral("UoutVal"));
+
+        verticalLayout_7->addWidget(UoutVal);
+
+
+        verticalLayout_9->addLayout(verticalLayout_7);
+
+        verticalLayout_8 = new QVBoxLayout();
+        verticalLayout_8->setSpacing(6);
+        verticalLayout_8->setObjectName(QStringLiteral("verticalLayout_8"));
+        label_4 = new QLabel(widget);
+        label_4->setObjectName(QStringLiteral("label_4"));
+
+        verticalLayout_8->addWidget(label_4);
+
+        Res2 = new QLabel(widget);
+        Res2->setObjectName(QStringLiteral("Res2"));
+
+        verticalLayout_8->addWidget(Res2);
+
+
+        verticalLayout_9->addLayout(verticalLayout_8);
+
+        widget1 = new QWidget(centralWidget);
+        widget1->setObjectName(QStringLiteral("widget1"));
+        widget1->setGeometry(QRect(510, 70, 91, 81));
+        verticalLayout_10 = new QVBoxLayout(widget1);
+        verticalLayout_10->setSpacing(6);
+        verticalLayout_10->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_10->setObjectName(QStringLiteral("verticalLayout_10"));
+        verticalLayout_10->setContentsMargins(0, 0, 0, 0);
+        FehlerLable = new QLabel(widget1);
+        FehlerLable->setObjectName(QStringLiteral("FehlerLable"));
+
+        verticalLayout_10->addWidget(FehlerLable);
+
+        FehlerVal = new QLabel(widget1);
+        FehlerVal->setObjectName(QStringLiteral("FehlerVal"));
+
+        verticalLayout_10->addWidget(FehlerVal);
+
         Widerstandsteiler->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(Widerstandsteiler);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 818, 22));
+        menuBar->setGeometry(QRect(0, 0, 639, 22));
         Widerstandsteiler->setMenuBar(menuBar);
         mainToolBar = new QToolBar(Widerstandsteiler);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -184,14 +261,20 @@ public:
     {
         Widerstandsteiler->setWindowTitle(QApplication::translate("Widerstandsteiler", "Widerstandsteiler", Q_NULLPTR));
         pushButton->setText(QApplication::translate("Widerstandsteiler", "GO", Q_NULLPTR));
-        Tolleranz->setText(QApplication::translate("Widerstandsteiler", "Tolleranz", Q_NULLPTR));
-        Res1->setText(QApplication::translate("Widerstandsteiler", "Res1", Q_NULLPTR));
-        Res2->setText(QApplication::translate("Widerstandsteiler", "Res2", Q_NULLPTR));
         UIn->setText(QApplication::translate("Widerstandsteiler", "U In", Q_NULLPTR));
         UOut->setText(QApplication::translate("Widerstandsteiler", "U Out", Q_NULLPTR));
         axWiderstand->setText(QApplication::translate("Widerstandsteiler", "Max Widerstand", Q_NULLPTR));
         EReihe->setText(QApplication::translate("Widerstandsteiler", "Norm Reihe", Q_NULLPTR));
+        NormReihe->setPrefix(QApplication::translate("Widerstandsteiler", "E", Q_NULLPTR));
         Picture->setText(QString());
+        Res1Lable->setText(QApplication::translate("Widerstandsteiler", "Widerstand 1", Q_NULLPTR));
+        Res1->setText(QApplication::translate("Widerstandsteiler", "Res1", Q_NULLPTR));
+        UoutLable->setText(QApplication::translate("Widerstandsteiler", "Ausgangsspannung", Q_NULLPTR));
+        UoutVal->setText(QApplication::translate("Widerstandsteiler", "Uout", Q_NULLPTR));
+        label_4->setText(QApplication::translate("Widerstandsteiler", "Widerstand 2", Q_NULLPTR));
+        Res2->setText(QApplication::translate("Widerstandsteiler", "Res2", Q_NULLPTR));
+        FehlerLable->setText(QApplication::translate("Widerstandsteiler", "Fehler", Q_NULLPTR));
+        FehlerVal->setText(QApplication::translate("Widerstandsteiler", "Error", Q_NULLPTR));
     } // retranslateUi
 
 };

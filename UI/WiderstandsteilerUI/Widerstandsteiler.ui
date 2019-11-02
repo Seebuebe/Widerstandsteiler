@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>818</width>
+    <width>639</width>
     <height>448</height>
    </rect>
   </property>
@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>310</y>
+      <x>70</x>
+      <y>309</y>
       <width>89</width>
       <height>21</height>
      </rect>
@@ -27,38 +27,12 @@
      <string>GO</string>
     </property>
    </widget>
-   <widget class="QLabel" name="Tolleranz">
-    <property name="geometry">
-     <rect>
-      <x>650</x>
-      <y>100</y>
-      <width>67</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Tolleranz</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Res2">
-    <property name="geometry">
-     <rect>
-      <x>480</x>
-      <y>230</y>
-      <width>67</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Res2</string>
-    </property>
-   </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>41</y>
-      <width>202</width>
+      <x>70</x>
+      <y>50</y>
+      <width>121</width>
       <height>224</height>
      </rect>
     </property>
@@ -122,7 +96,11 @@
         </widget>
        </item>
        <item>
-        <widget class="QSpinBox" name="NormReihe"/>
+        <widget class="QSpinBox" name="NormReihe">
+         <property name="prefix">
+          <string>E</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -131,8 +109,8 @@
    <widget class="QLabel" name="Picture">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>0</y>
+      <x>240</x>
+      <y>20</y>
       <width>91</width>
       <height>341</height>
      </rect>
@@ -144,18 +122,97 @@
      <pixmap>Images/Widerstand.svg</pixmap>
     </property>
    </widget>
-   <widget class="QLabel" name="Res1">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>480</x>
-      <y>100</y>
-      <width>67</width>
-      <height>17</height>
+      <x>340</x>
+      <y>70</y>
+      <width>136</width>
+      <height>241</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Res1</string>
+    <layout class="QVBoxLayout" name="verticalLayout_9">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_6">
+       <item>
+        <widget class="QLabel" name="Res1Lable">
+         <property name="text">
+          <string>Widerstand 1</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="Res1">
+         <property name="text">
+          <string>Res1</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <item>
+        <widget class="QLabel" name="UoutLable">
+         <property name="text">
+          <string>Ausgangsspannung</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="UoutVal">
+         <property name="text">
+          <string>Uout</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_8">
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>Widerstand 2</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="Res2">
+         <property name="text">
+          <string>Res2</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>70</y>
+      <width>91</width>
+      <height>81</height>
+     </rect>
     </property>
+    <layout class="QVBoxLayout" name="verticalLayout_10">
+     <item>
+      <widget class="QLabel" name="FehlerLable">
+       <property name="text">
+        <string>Fehler</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="FehlerVal">
+       <property name="text">
+        <string>Error</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -163,7 +220,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>818</width>
+     <width>639</width>
      <height>22</height>
     </rect>
    </property>
