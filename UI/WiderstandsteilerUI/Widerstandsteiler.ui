@@ -6,7 +6,11 @@
    <rect>
     <x>0</x>
     <y>0</y>
+<<<<<<< HEAD
     <width>639</width>
+=======
+    <width>635</width>
+>>>>>>> 83cef1a5a12a763beffad379e0a21101dee4299b
     <height>448</height>
    </rect>
   </property>
@@ -17,8 +21,13 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
+<<<<<<< HEAD
       <x>70</x>
       <y>309</y>
+=======
+      <x>20</x>
+      <y>310</y>
+>>>>>>> 83cef1a5a12a763beffad379e0a21101dee4299b
       <width>89</width>
       <height>21</height>
      </rect>
@@ -27,12 +36,34 @@
      <string>GO</string>
     </property>
    </widget>
+<<<<<<< HEAD
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>70</x>
       <y>50</y>
       <width>121</width>
+=======
+   <widget class="QLabel" name="Tolleranz">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>90</y>
+      <width>67</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Tolleranz</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>51</y>
+      <width>202</width>
+>>>>>>> 83cef1a5a12a763beffad379e0a21101dee4299b
       <height>224</height>
      </rect>
     </property>
@@ -97,18 +128,39 @@
        </item>
        <item>
         <widget class="QSpinBox" name="NormReihe">
+<<<<<<< HEAD
          <property name="prefix">
           <string>E</string>
          </property>
+=======
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="prefix">
+          <string>E</string>
+         </property>
+         <property name="EReihen" stdset="0">
+          <stringlist>
+           <string>E3</string>
+           <string>E6</string>
+           <string>E12</string>
+           <string>E24</string>
+           <string>E48</string>
+           <string>E96</string>
+           <string>E192</string>
+          </stringlist>
+         </property>
+>>>>>>> 83cef1a5a12a763beffad379e0a21101dee4299b
         </widget>
        </item>
       </layout>
      </item>
     </layout>
    </widget>
-   <widget class="QLabel" name="Picture">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
+<<<<<<< HEAD
       <x>240</x>
       <y>20</y>
       <width>91</width>
@@ -142,12 +194,35 @@
         </widget>
        </item>
        <item>
+=======
+      <x>260</x>
+      <y>60</y>
+      <width>181</width>
+      <height>270</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="Picture">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>Images/Widerstand.svg</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_6">
+       <item>
+>>>>>>> 83cef1a5a12a763beffad379e0a21101dee4299b
         <widget class="QLabel" name="Res1">
          <property name="text">
           <string>Res1</string>
          </property>
         </widget>
        </item>
+<<<<<<< HEAD
       </layout>
      </item>
      <item>
@@ -177,6 +252,8 @@
          </property>
         </widget>
        </item>
+=======
+>>>>>>> 83cef1a5a12a763beffad379e0a21101dee4299b
        <item>
         <widget class="QLabel" name="Res2">
          <property name="text">
@@ -187,6 +264,7 @@
       </layout>
      </item>
     </layout>
+<<<<<<< HEAD
    </widget>
    <widget class="QWidget" name="">
     <property name="geometry">
@@ -213,6 +291,9 @@
       </widget>
      </item>
     </layout>
+=======
+    <zorder>Picture</zorder>
+>>>>>>> 83cef1a5a12a763beffad379e0a21101dee4299b
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -220,7 +301,11 @@
     <rect>
      <x>0</x>
      <y>0</y>
+<<<<<<< HEAD
      <width>639</width>
+=======
+     <width>635</width>
+>>>>>>> 83cef1a5a12a763beffad379e0a21101dee4299b
      <height>22</height>
     </rect>
    </property>
@@ -236,6 +321,14 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>UinStr</tabstop>
+  <tabstop>UoutStr</tabstop>
+  <tabstop>MaxResStr</tabstop>
+  <tabstop>MaxResExp</tabstop>
+  <tabstop>NormReihe</tabstop>
+  <tabstop>pushButton</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

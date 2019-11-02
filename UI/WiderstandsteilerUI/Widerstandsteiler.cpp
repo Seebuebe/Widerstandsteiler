@@ -8,10 +8,18 @@ Widerstandsteiler::Widerstandsteiler(QWidget* parent)
 {
   ui->setupUi(this);
 
+<<<<<<< HEAD
   // QPixmap pix(
   //    "/Documents/Widerstandsteiler/Widerstandsteiler/UI/WiderstandsteilerUI/"
   //    "Images/bild2.png");  // Bild Importieren
   // ui->Picture->setPixmap(pix);
+=======
+  QPixmap pix(
+
+      "/Documents/Widerstandsteiler/Widerstandsteiler/UI/     "
+      "WiderstandsteilerUI/");  // Bild Importieren
+  ui->Picture->setPixmap(pix);
+>>>>>>> 83cef1a5a12a763beffad379e0a21101dee4299b
 
   // this->setStyleSheet("background-color: black;");
 }
