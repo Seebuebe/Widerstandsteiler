@@ -8,7 +8,8 @@ namespace Ui
 class Widerstandsteiler;
 }
 
-class Widerstandsteiler : public QMainWindow {
+class Widerstandsteiler : public QMainWindow
+{
   Q_OBJECT
 
  public:
@@ -16,9 +17,9 @@ class Widerstandsteiler : public QMainWindow {
   ~Widerstandsteiler();
 
  private slots:
-  void on_spinBox_customContextMenuRequested(const QPoint& pos);
-
-  void on_pushButton_clicked();
+  void on_pushButton_clicked();  // Event Bei drücken des Push
+  void on_EReiheDown_clicked();
+  void on_EReiheUp_clicked();
 
  private:
   Ui::Widerstandsteiler* ui;

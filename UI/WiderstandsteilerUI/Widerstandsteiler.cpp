@@ -1,5 +1,6 @@
 #include "Widerstandsteiler.h"
 #include <iostream>
+#include "../../algorithm/Ecalc.h"
 #include "QMessageBox"  //Wird verwendet um die Anzeigebox einzufügen
 #include "ui_Widerstandsteiler.h"
 
@@ -7,19 +8,6 @@ Widerstandsteiler::Widerstandsteiler(QWidget* parent)
     : QMainWindow(parent), ui(new Ui::Widerstandsteiler)
 {
   ui->setupUi(this);
-
-  // QPixmap pix(
-  //    "/Documents/Widerstandsteiler/Widerstandsteiler/UI/WiderstandsteilerUI/"
-  //    "Images/bild2.png");  // Bild Importieren
-  // ui->Picture->setPixmap(pix);
-
-  QPixmap pix(
-
-      "/Documents/Widerstandsteiler/Widerstandsteiler/UI/     "
-      "WiderstandsteilerUI/");  // Bild Importieren
-  // ui->Picture->setPixmap(pix);
-
-  // this->setStyleSheet("background-color: black;");
 }
 
 Widerstandsteiler::~Widerstandsteiler()
@@ -33,7 +21,7 @@ void Widerstandsteiler::on_pushButton_clicked()  // Event Bei drücken des Push
   QString Rmax = ui->MaxResStr->text();  // Einlesen der Eingabe Werte
   QString Uin = ui->UinStr->text();
   QString Uout = ui->UoutStr->text();
-  QString EReihe = ui->EReihe->text();
+  QString EReihe = ui->EReiheInp->text();
 
   double UinD = 0;
   double UoutD = 0;
@@ -43,12 +31,16 @@ void Widerstandsteiler::on_pushButton_clicked()  // Event Bei drücken des Push
   double ResRet2 = 0;
   double UoutRet = 0;
   double Fehler = 0;
+  std::string EReiheStr;
+
+  EReiheStr = EReihe.toStdString();
 
   UinD = Uin.toDouble();  // Umwandlung unser String Werte zu Double
   UoutD = Uout.toDouble();
   RmaxD = Rmax.toDouble();
 
-  if (UinD < UoutD || UinD < 0 || UoutD < 0)
+  if (UinD < UoutD || UinD < 0 ||
+      UoutD < 0)  // Fehler Abfangen bei Falscheingabe
   {
     QMessageBox::warning(this, "Error", "Falsche Eingabe");
   }
@@ -58,5 +50,27 @@ void Widerstandsteiler::on_pushButton_clicked()  // Event Bei drücken des Push
     ui->Res2->setNum(ResRet2);
     ui->FehlerVal->setNum(Fehler);
     ui->UoutVal->setNum(UoutRet);
+  }
+}
+
+static int i = 0;
+
+void Widerstandsteiler::on_EReiheDown_clicked()
+{
+  if (i > 0)
+  {
+    i--;
+    static QString EString[] = {"E3", "E6", "E12", "E24", "E48", "E96", "E128"};
+    ui->EReiheInp->setText(EString[i]);
+  }
+}
+
+void Widerstandsteiler::on_EReiheUp_clicked()
+{
+  if (i < 6)
+  {
+    i++;
+    static QString EString[] = {"E3", "E6", "E12", "E24", "E48", "E96", "E128"};
+    ui->EReiheInp->setText(EString[i]);
   }
 }

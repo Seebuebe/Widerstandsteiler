@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/ResImag">
+        <file>Images/Bild2.png</file>
+        <file>Images/Bild2_klein.png</file>
+        <file>Images/Bild3.svg</file>
+        <file>Images/Bild3_klein.svg</file>
+        <file>Images/Widerstand.svg</file>
+    </qresource>
+</RCC>

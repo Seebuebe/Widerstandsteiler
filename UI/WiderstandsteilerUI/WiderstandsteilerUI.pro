@@ -23,10 +23,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        #../../algorithm/Ecalc.cpp \
         main.cpp \
         Widerstandsteiler.cpp
 
 HEADERS += \
+        #../../algorithm/Ecalc.h \
         Widerstandsteiler.h
 
 FORMS += \
@@ -36,3 +38,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+  ResImage.qrc
