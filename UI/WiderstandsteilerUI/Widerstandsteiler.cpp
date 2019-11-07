@@ -3,6 +3,7 @@
 #include "../../algorithm/Ecalc.h"
 #include "QMessageBox"  //Wird verwendet um die Anzeigebox einzufügen
 #include "ui_Widerstandsteiler.h"
+using namespace std;
 
 Widerstandsteiler::Widerstandsteiler(QWidget* parent)
     : QMainWindow(parent), ui(new Ui::Widerstandsteiler)
@@ -31,6 +32,7 @@ void Widerstandsteiler::on_pushButton_clicked()  // Event Bei drücken des Push
   double ResRet2 = 0;
   double UoutRet = 0;
   double Fehler = 0;
+  double EreiheInt = 0;
   std::string EReiheStr;
 
   EReiheStr = EReihe.toStdString();
@@ -46,6 +48,43 @@ void Widerstandsteiler::on_pushButton_clicked()  // Event Bei drücken des Push
   }
   else  // Ausgänge Beschreiben
   {
+    if (EReiheStr == "E3")
+    {
+      EreiheInt = 3;
+    }
+    else if (EReiheStr == "E6")
+    {
+      EreiheInt = 6;
+    }
+    else if (EReiheStr == "E12")
+    {
+      EreiheInt = 12;
+    }
+    else if (EReiheStr == "E24")
+    {
+      EreiheInt = 24;
+    }
+    else if (EReiheStr == "E48")
+    {
+      EreiheInt = 48;
+    }
+    else if (EReiheStr == "E96")
+    {
+      EreiheInt = 96;
+    }
+    else if (EReiheStr == "E128")
+    {
+      EreiheInt = 128;
+    }
+
+    Ecalc ecalc;
+    ecalc.calculate(UinD, UoutD, EreiheInt, RmaxD);
+
+    ResRet1 = ecalc.getResistor1();
+    ResRet2 = ecalc.getResistor2();
+    Fehler = ecalc.getOutput();
+    UoutRet = ecalc.getErrorRel() * 100;
+
     ui->Res1->setNum(ResRet1);
     ui->Res2->setNum(ResRet2);
     ui->FehlerVal->setNum(Fehler);
