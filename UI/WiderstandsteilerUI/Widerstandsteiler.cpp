@@ -77,6 +77,7 @@ void Widerstandsteiler::on_pushButton_clicked()  // Event Bei drücken des Push
       EreiheInt = 128;
     }
 
+    /*
     Ecalc ecalc;
     ecalc.calculate(UinD, UoutD, EreiheInt, RmaxD);
 
@@ -84,7 +85,7 @@ void Widerstandsteiler::on_pushButton_clicked()  // Event Bei drücken des Push
     ResRet2 = ecalc.getResistor2();
     Fehler = ecalc.getOutput();
     UoutRet = ecalc.getErrorRel() * 100;
-
+  */
     ui->Res1->setNum(ResRet1);
     ui->Res2->setNum(ResRet2);
     ui->FehlerVal->setNum(Fehler);
