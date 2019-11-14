@@ -23,7 +23,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-        #../../algorithm/Ecalc.cpp \
+        ../../algorithm/Ecalc.cpp \
         main.cpp \
         Widerstandsteiler.cpp
 
