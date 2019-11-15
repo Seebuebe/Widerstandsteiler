@@ -1,7 +1,6 @@
 #include "Widerstandsteiler.h"
-#include <stdlib.h>
 #include <iostream>
-#include "../../algorithm/Ecalc.h"
+#include "../../algorithm/Ecalc.h"  //Backend Code
 #include "QMessageBox"  //Wird verwendet um die Anzeigebox einzufügen
 #include "ui_Widerstandsteiler.h"
 
@@ -21,7 +20,11 @@ Widerstandsteiler::~Widerstandsteiler()
 void Widerstandsteiler::on_pushButton_clicked()  // Event Bei drücken des Push
                                                  // Buttons
 {
-  // QString Rmax = ui->MaxResStr->text();  // Einlesen der Eingabe Werte
+  /**
+  Die Funktion wird verwendet um Ausnahmen abzufangen und alle Daten in ihren
+  Vorgesehenen typ umzuwamdeln
+  */
+
   QString Uin = ui->UinStr->text();
   QString Uout = ui->UoutStr->text();
   QString EReihe = ui->EReiheInp->text();
@@ -39,12 +42,13 @@ void Widerstandsteiler::on_pushButton_clicked()  // Event Bei drücken des Push
   int UinSize = 0;
   int UoutSize = 0;
   bool isNum = false;
-  UinSize = Uin.size();
+
+  UinSize = Uin.size();  // Bestimmen ob Leerer wert. Lehr wird abgefangen
   UoutSize = Uout.size();
 
   std::string EReiheStr;
 
-  EReiheStr = EReihe.toStdString();
+  EReiheStr = EReihe.toStdString();  // Umwandlung in String
 
   UinD = Uin.toDouble(&isNum);  // Umwandlung unser String Werte zu Double
   UoutD = Uout.toDouble(&isNum);
@@ -89,12 +93,12 @@ void Widerstandsteiler::on_pushButton_clicked()  // Event Bei drücken des Push
     Ecalc ecalc;
     ecalc.calculate(UinD, UoutD, EreiheInt, RmaxD);
 
-    ResRet1 = ecalc.getResistor1();
+    ResRet1 = ecalc.getResistor1();  // Funktionsaufrufe
     ResRet2 = ecalc.getResistor2();
     UoutRet = ecalc.getOutput();
     Fehler = ecalc.getErrorRel() * 100;
 
-    ui->Res1->setNum(ResRet1);
+    ui->Res1->setNum(ResRet1);  // Rückgabewerte ausgeben
     ui->Res2->setNum(ResRet2);
     ui->FehlerVal->setNum(Fehler);
     ui->UoutVal->setNum(UoutRet);
@@ -105,6 +109,11 @@ static int i = 0;
 
 void Widerstandsteiler::on_EReiheDown_clicked()
 {
+  /**
+    Bei Klick wird aus dem String der Entsprechende E Wert ausgewählt Pro Klick
+    wird der string um 1 dekrementiert
+    */
+
   if (i > 0)
   {
     i--;
@@ -115,6 +124,11 @@ void Widerstandsteiler::on_EReiheDown_clicked()
 
 void Widerstandsteiler::on_EReiheUp_clicked()
 {
+  /**
+    Bei Klick wird aus dem String der Entsprechende E Wert ausgewählt Pro Klick
+    wird der string um 1 dekrementiert
+  */
+
   if (i < 6)
   {
     i++;
