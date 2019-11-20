@@ -1,4 +1,5 @@
 #include "Widerstandsteiler.h"
+#include <cmath>
 #include <iostream>
 #include "../../algorithm/Ecalc.h"  //Backend Code
 #include "QMessageBox"  //Wird verwendet um die Anzeigebox einzufügen
@@ -97,6 +98,14 @@ void Widerstandsteiler::on_pushButton_clicked()  // Event Bei drücken des Push
     ResRet2 = ecalc.getResistor2();
     UoutRet = ecalc.getOutput();
     Fehler = ecalc.getErrorRel() * 100;
+
+    Fehler = (Fehler * 100 + 0.5);
+    int FehlerInt = (int) Fehler;
+    Fehler = ((double) FehlerInt) / 100;
+
+    UoutRet = UoutRet * 100 + 0.5;
+    int UoutRetInt = (int) UoutRet;
+    UoutRet = ((double) UoutRetInt) / 100;
 
     ui->Res1->setNum(ResRet1);  // Rückgabewerte ausgeben
     ui->Res2->setNum(ResRet2);
