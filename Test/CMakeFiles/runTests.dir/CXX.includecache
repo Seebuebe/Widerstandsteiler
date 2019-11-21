@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/user/Documents/Widerstandsteiler/Test/Test.cpp
+../algorithm/Ecalc.cpp
+/home/user/Documents/Widerstandsteiler/algorithm/Ecalc.cpp
+gtest/gtest.h
+-
+
+/home/user/Documents/Widerstandsteiler/algorithm/Ecalc.cpp
+../algorithm/Ecalc.h
+/home/user/Documents/Widerstandsteiler/algorithm/Ecalc.h
+cmath
+-
+iostream
+-
+
+/home/user/Documents/Widerstandsteiler/algorithm/Ecalc.h
+
