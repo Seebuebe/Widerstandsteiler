@@ -1,4 +1,5 @@
-# Widerstandsteiler
+# Widerstandsteiler 
+*Gruppe 10*
 
 ## Befehle Test
 1. sudo cmake MakeList.txt
