@@ -7,6 +7,10 @@
 
 using namespace std;
 
+/**
+ * @brief Widerstandsteiler::Widerstandsteiler
+ * @param parent
+ */
 Widerstandsteiler::Widerstandsteiler(QWidget* parent)
     : QMainWindow(parent), ui(new Ui::Widerstandsteiler)
 {
@@ -18,14 +22,13 @@ Widerstandsteiler::~Widerstandsteiler()
   delete ui;
 }
 
+/**
+ * @brief Uin Die Funktion wird verwendet um Ausnahmen abzufangen und alle Daten
+in ihren Vorgesehenen typ umzuwamdeln
+ */
 void Widerstandsteiler::on_pushButton_clicked()  // Event Bei drücken des Push
                                                  // Buttons
 {
-  /**
-  Die Funktion wird verwendet um Ausnahmen abzufangen und alle Daten in ihren
-  Vorgesehenen typ umzuwamdeln
-  */
-
   QString Uin = ui->UinStr->text();
   QString Uout = ui->UoutStr->text();
   QString EReihe = ui->EReiheInp->text();
@@ -114,14 +117,13 @@ void Widerstandsteiler::on_pushButton_clicked()  // Event Bei drücken des Push
 }
 
 static int i = 0;
-
+/**
+ * @brief Widerstandsteiler::on_EReiheDown_clicked Bei Klick wird aus dem String
+ der Entsprechende E Wert ausgewählt Pro Klick wird der string um 1
+ dekrementiert
+ */
 void Widerstandsteiler::on_EReiheDown_clicked()
 {
-  /**
-    Bei Klick wird aus dem String der Entsprechende E Wert ausgewählt Pro Klick
-    wird der string um 1 dekrementiert
-    */
-
   if (i > 0)
   {
     i--;
@@ -130,13 +132,14 @@ void Widerstandsteiler::on_EReiheDown_clicked()
   }
 }
 
+/**
+ * @brief Widerstandsteiler::on_EReiheUp_clicked Bei Klick wird aus dem String
+ der Entsprechende E Wert ausgewählt Pro Klick wird der string um 1
+ dekrementiert
+ */
+
 void Widerstandsteiler::on_EReiheUp_clicked()
 {
-  /**
-    Bei Klick wird aus dem String der Entsprechende E Wert ausgewählt Pro Klick
-    wird der string um 1 dekrementiert
-  */
-
   if (i < 6)
   {
     i++;
