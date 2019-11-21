@@ -19,7 +19,7 @@ class Ecalc
    * @param es
    * @param maxR
    */
-  void calculate(double in, double out, double es, double maxR);
+  bool calculate(double in, double out, double es, double maxR);
   /**
    * @brief getResistor1
    * @return

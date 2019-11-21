@@ -53,14 +53,11 @@ void Widerstandsteiler::on_pushButton_clicked()  // Event Bei drücken des Push
 
   UinD = Uin.toDouble(&isNum);  // Umwandlung unser String Werte zu Double
   UoutD = Uout.toDouble(&isNum);
-  // RmaxD = Rmax.toDouble();
 
-  if (isNum == false || UinD < UoutD || UinD < 0 || UoutD < 0 ||
-      (UinSize == 0 && UoutSize == 0))  // Fehler Abfangen bei Falscheingabe
-  {
-    QMessageBox::warning(this, "Error", "Falsche Eingabe");
-  }
-  else  // Ausgänge Beschreiben
+  Ecalc ecalc;
+
+  if (ecalc.calculate(UinD, UoutD, EreiheInt, RmaxD) ==
+      true)  // Ausgänge Beschreiben
   {
     if (EReiheStr == "E3")
     {
@@ -90,28 +87,30 @@ void Widerstandsteiler::on_pushButton_clicked()  // Event Bei drücken des Push
     {
       EreiheInt = 192;
     }
-
-    Ecalc ecalc;
-    ecalc.calculate(UinD, UoutD, EreiheInt, RmaxD);
-
-    ResRet1 = ecalc.getResistor1();  // Funktionsaufrufe
-    ResRet2 = ecalc.getResistor2();
-    UoutRet = ecalc.getOutput();
-    Fehler = ecalc.getErrorRel() * 100;
-
-    Fehler = (Fehler * 100 + 0.5);
-    int FehlerInt = (int) Fehler;
-    Fehler = ((double) FehlerInt) / 100;
-
-    UoutRet = UoutRet * 100 + 0.5;
-    int UoutRetInt = (int) UoutRet;
-    UoutRet = ((double) UoutRetInt) / 100;
-
-    ui->Res1->setNum(ResRet1);  // Rückgabewerte ausgeben
-    ui->Res2->setNum(ResRet2);
-    ui->FehlerVal->setNum(Fehler);
-    ui->UoutVal->setNum(UoutRet);
   }
+
+  else
+  {
+    QMessageBox::warning(this, "Error", "Falsche Eingabe");
+  }
+
+  ResRet1 = ecalc.getResistor1();  // Funktionsaufrufe
+  ResRet2 = ecalc.getResistor2();
+  UoutRet = ecalc.getOutput();
+  Fehler = ecalc.getErrorRel() * 100;
+
+  Fehler = (Fehler * 100 + 0.5);  // Runden auf zwei stellen
+  int FehlerInt = (int) Fehler;
+  Fehler = ((double) FehlerInt) / 100;
+
+  UoutRet = UoutRet * 100 + 0.5;
+  int UoutRetInt = (int) UoutRet;
+  UoutRet = ((double) UoutRetInt) / 100;
+
+  ui->Res1->setNum(ResRet1);  // Rückgabewerte ausgeben
+  ui->Res2->setNum(ResRet2);
+  ui->FehlerVal->setNum(Fehler);
+  ui->UoutVal->setNum(UoutRet);
 }
 
 static int i = 0;
