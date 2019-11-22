@@ -227,7 +227,7 @@ DIST          = /opt/qt/5.12.4/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/qt/5.12.4/gcc_64/mkspecs/features/exceptions.prf \
 		/opt/qt/5.12.4/gcc_64/mkspecs/features/yacc.prf \
 		/opt/qt/5.12.4/gcc_64/mkspecs/features/lex.prf \
-		../../FileTest.pro  ../Test.cpp
+		../../FileTest.pro ../Test.cpp ../Test.cpp
 QMAKE_TARGET  = FileTest
 DESTDIR       = 
 TARGET        = FileTest
@@ -604,6 +604,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /opt/qt/5.12.4/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Test.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Test.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -651,59 +652,7 @@ compiler_clean: compiler_moc_predefs_clean
 
 ####### Compile
 
-Test.o: ../Test.cpp /opt/qt/5.12.4/gcc_64/include/QtCore/QCoreApplication \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qcoreapplication.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qglobal.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qconfig-bootstrapped.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qconfig.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qtcore-config.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qsystemdetection.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qprocessordetection.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qcompilerdetection.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qtypeinfo.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qsysinfo.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qlogging.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qflags.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qatomic.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qbasicatomic.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qatomic_bootstrap.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qgenericatomic.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qatomic_cxx11.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qatomic_msvc.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qglobalstatic.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qmutex.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qnumeric.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qversiontagging.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qstring.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qchar.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qbytearray.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qrefcount.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qnamespace.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qarraydata.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qstringliteral.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qstringalgorithms.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qstringview.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qstringbuilder.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qobject.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qobjectdefs.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qlist.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qalgorithms.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qiterator.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qhashfunctions.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qpair.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qbytearraylist.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qstringlist.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qregexp.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qstringmatcher.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qcoreevent.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qscopedpointer.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qmetatype.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qvarlengtharray.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qcontainerfwd.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qobject_impl.h \
-		/opt/qt/5.12.4/gcc_64/include/QtCore/qeventloop.h \
-		../../algorithm/Ecalc.cpp \
+Test.o: ../Test.cpp ../../algorithm/Ecalc.cpp \
 		../../algorithm/Ecalc.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Test.o ../Test.cpp
 

@@ -26,8 +26,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 LIBS += -lgtest
 
-#HEADERS += \
-#    Till.h
+HEADERS += \
+    Test.cpp
 
 #GCOV Settings
 QMAKE_CXXFLAGS += -fprofile-arcs -ftest-coverage
