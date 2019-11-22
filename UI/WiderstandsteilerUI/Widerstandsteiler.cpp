@@ -47,6 +47,8 @@ void Widerstandsteiler::on_pushButton_clicked()  // Event Bei drücken des Push
   int UoutSize = 0;
   bool isNum = false;
 
+  Ecalc ecalc;
+
   UinSize = Uin.size();  // Bestimmen ob Leerer wert. Lehr wird abgefangen
   UoutSize = Uout.size();
 
@@ -57,63 +59,61 @@ void Widerstandsteiler::on_pushButton_clicked()  // Event Bei drücken des Push
   UinD = Uin.toDouble(&isNum);  // Umwandlung unser String Werte zu Double
   UoutD = Uout.toDouble(&isNum);
 
-  Ecalc ecalc;
+  if (EReiheStr == "E3")
+  {
+    EreiheInt = 3;
+  }
+  else if (EReiheStr == "E6")
+  {
+    EreiheInt = 6;
+  }
+  else if (EReiheStr == "E12")
+  {
+    EreiheInt = 12;
+  }
+  else if (EReiheStr == "E24")
+  {
+    EreiheInt = 24;
+  }
+  else if (EReiheStr == "E48")
+  {
+    EreiheInt = 48;
+  }
+  else if (EReiheStr == "E96")
+  {
+    EreiheInt = 96;
+  }
+  else if (EReiheStr == "E192")
+  {
+    EreiheInt = 192;
+  }
 
   if (ecalc.calculate(UinD, UoutD, EreiheInt, RmaxD) ==
       true)  // Ausgänge Beschreiben
   {
-    if (EReiheStr == "E3")
-    {
-      EreiheInt = 3;
-    }
-    else if (EReiheStr == "E6")
-    {
-      EreiheInt = 6;
-    }
-    else if (EReiheStr == "E12")
-    {
-      EreiheInt = 12;
-    }
-    else if (EReiheStr == "E24")
-    {
-      EreiheInt = 24;
-    }
-    else if (EReiheStr == "E48")
-    {
-      EreiheInt = 48;
-    }
-    else if (EReiheStr == "E96")
-    {
-      EreiheInt = 96;
-    }
-    else if (EReiheStr == "E192")
-    {
-      EreiheInt = 192;
-    }
+    ResRet1 = ecalc.getResistor1();  // Funktionsaufrufe
+    ResRet2 = ecalc.getResistor2();
+    UoutRet = ecalc.getOutput();
+    Fehler = ecalc.getErrorRel() * 100;
+
+    Fehler = (Fehler * 100 + 0.5);  // Runden auf zwei stellen
+    int FehlerInt = (int) Fehler;
+    Fehler = ((double) FehlerInt) / 100;
+
+    UoutRet = UoutRet * 100 + 0.5;
+    int UoutRetInt = (int) UoutRet;
+    UoutRet = ((double) UoutRetInt) / 100;
+
+    ui->Res1->setNum(ResRet1);  // Rückgabewerte ausgeben
+    ui->Res2->setNum(ResRet2);
+    ui->FehlerVal->setNum(Fehler);
+    ui->UoutVal->setNum(UoutRet);
   }
 
   else
   {
     QMessageBox::warning(this, "Error", "Falsche Eingabe");
   }
-
-  ResRet1 = ecalc.getResistor1();  // Funktionsaufrufe
-  ResRet2 = ecalc.getResistor2();
-  UoutRet = ecalc.getOutput();
-  Fehler = ecalc.getErrorRel() * 100;
-
-  Fehler = (Fehler * 100 + 0.5);  // Runden auf zwei stellen
-  int FehlerInt = (int) Fehler;
-  Fehler = ((double) FehlerInt) / 100;
-
-  UoutRet = UoutRet * 100 + 0.5;
-  int UoutRetInt = (int) UoutRet;
-  UoutRet = ((double) UoutRetInt) / 100;
-
-  ui->Res1->setNum(ResRet1);  // Rückgabewerte ausgeben
-  ui->Res2->setNum(ResRet2);
-  ui->FehlerVal->setNum(Fehler);
-  ui->UoutVal->setNum(UoutRet);
 }
 
 static int i = 0;
