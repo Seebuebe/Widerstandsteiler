@@ -88,14 +88,41 @@ TEST(Ecalc, E192Reihe)
 
 
 //Testen der Exceptions
-
+/*
+* Hinweis: da der Compiler keine leere Übergabe, sowie keine Buchstaben akzeptiert,
+* müsste dies im Gui abgefangen und getestet werden.
+* Dies wird beim nächsten Workaround erledigt.
+*/
 
 TEST(Ecalc, UoutgreaterUin) {
 	Ecalc obj;
   ASSERT_EQ(obj.calculate(1, 10, 3, 0), false); 
 }
 
-//TODO Rest der Exceptions
+TEST(Ecalc, UinNegativ) {
+	Ecalc obj;
+  ASSERT_EQ(obj.calculate(-1, 10, 3, 0), false); 
+}
+
+TEST(Ecalc, UoutNegativ) {
+	Ecalc obj;
+  ASSERT_EQ(obj.calculate(1, -10, 3, 0), false); 
+}
+
+TEST(Ecalc, UinANDUoutNegativ) {
+	Ecalc obj;
+  ASSERT_EQ(obj.calculate(-1, -10, 3, 0), false); 
+}
+
+TEST(Ecalc, UinANDUoutequalZero) {
+	Ecalc obj;
+  ASSERT_EQ(obj.calculate(0, 0, 3, 0), false); 
+}
+
+TEST(Ecalc, UinDIFFUoutgreater4700) {
+	Ecalc obj;
+  ASSERT_EQ(obj.calculate(5000, 1, 3, 0), false); 
+}
 
 
 
