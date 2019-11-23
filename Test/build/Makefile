@@ -227,7 +227,7 @@ DIST          = /opt/qt/5.12.4/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/qt/5.12.4/gcc_64/mkspecs/features/exceptions.prf \
 		/opt/qt/5.12.4/gcc_64/mkspecs/features/yacc.prf \
 		/opt/qt/5.12.4/gcc_64/mkspecs/features/lex.prf \
-		../../FileTest.pro ../Test.cpp ../Test.cpp
+		../../FileTest.pro  ../Test.cpp
 QMAKE_TARGET  = FileTest
 DESTDIR       = 
 TARGET        = FileTest
@@ -603,7 +603,6 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /opt/qt/5.12.4/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Test.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Test.cpp $(DISTDIR)/
 
 
