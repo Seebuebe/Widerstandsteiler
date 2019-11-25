@@ -32,17 +32,17 @@ double Ecalc::getResistor2()
 
 double Ecalc::getOutput()
 {
-  return (uIn * (r2 / (r1 + r2)));
+  return round((uIn * (r2 / (r1 + r2))) * 1000) / 1000;
 }
 
 double Ecalc::getErrorABS()
 {
-  return abs(uOut - getOutput());
+  return round(abs(uOut - getOutput()) * 1000) / 1000;
 }
 
 double Ecalc::getErrorRel()
 {
-  return getErrorABS() / getOutput();
+  return round((getErrorABS() / getOutput()) * 1000) / 1000;
 }
 
 void Ecalc::calc()
@@ -51,10 +51,8 @@ void Ecalc::calc()
   double ratio_is;
   double ratio_error = 1;
   // double ratio_error_old = 1;
-  double res1;
-  double res2;
-
-  double in = 0;
+  double res1 = 0;
+  double res2 = 0;
 
   for (int i = 0; i < series; i++)
   {
@@ -64,7 +62,6 @@ void Ecalc::calc()
       {
         for (int i3 = 1; i3 < 10000; i3 *= 10)
         {
-          in++;
           ratio_is = getR(i) * i2 / (getR(i1) * i3 + getR(i) * i2);
           if (abs(ratio_is - ratio_des) < ratio_error)
           {
@@ -76,7 +73,6 @@ void Ecalc::calc()
       }
     }
   }
-  cout << in << endl;
   r1 = res1;
   r2 = res2;
 }
