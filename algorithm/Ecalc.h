@@ -8,11 +8,10 @@
 #ifndef ECALC_H_
 #define ECALC_H_
 
-class Ecalc
-{
+class Ecalc {
  public:
   Ecalc(void);
-  void calculate(double in, double out, double es, double maxR);
+  int calculate(double in, double out, double es, double maxR);
   double getResistor1();
   double getResistor2();
   double getErrorABS();

@@ -8,13 +8,16 @@ Ecalc::Ecalc()
 {
 }
 
-void Ecalc::calculate(double in, double out, double es, double maxR)
+int Ecalc::calculate(double in, double out, double es, double maxR)
 {
   uIn = in;
   uOut = out;
   series = es;
   maxResistance = maxR;
+  if (in <= out || in <= 0 || out <= 0)
+    return 0;
   calc();
+  return 1;
 }
 
 double Ecalc::getResistor1()
