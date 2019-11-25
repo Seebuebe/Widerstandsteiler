@@ -1,4 +1,4 @@
-#include "../../algorithm/Ecalc.h"
+#include "../algorithm/Ecalc.h"
 #include <cmath>
 #include <iostream>
 
@@ -8,7 +8,11 @@ Ecalc::Ecalc()
 {
 }
 
+<<<<<<< HEAD
 int Ecalc::calculate(double in, double out, double es, double maxR)
+=======
+bool Ecalc::calculate(double in, double out, double es, double maxR)
+>>>>>>> f37e30c8021bf077c850b6425163bf8e56048733
 {
   uIn = in;
   uOut = out;
@@ -17,7 +21,12 @@ int Ecalc::calculate(double in, double out, double es, double maxR)
   if (in <= out || in <= 0 || out <= 0)
     return 0;
   calc();
+<<<<<<< HEAD
   return 1;
+=======
+
+  return true;
+>>>>>>> f37e30c8021bf077c850b6425163bf8e56048733
 }
 
 double Ecalc::getResistor1()

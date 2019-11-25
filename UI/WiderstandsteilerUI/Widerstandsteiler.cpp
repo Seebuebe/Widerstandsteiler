@@ -1,12 +1,16 @@
 #include "Widerstandsteiler.h"
-#include <stdlib.h>
+#include <cmath>
 #include <iostream>
-#include "../../algorithm/Ecalc.h"
+#include "../../algorithm/Ecalc.h"  //Backend Code
 #include "QMessageBox"  //Wird verwendet um die Anzeigebox einzufügen
 #include "ui_Widerstandsteiler.h"
 
 using namespace std;
 
+/**
+ * @brief Widerstandsteiler::Widerstandsteiler
+ * @param parent
+ */
 Widerstandsteiler::Widerstandsteiler(QWidget* parent)
     : QMainWindow(parent), ui(new Ui::Widerstandsteiler)
 {
@@ -18,10 +22,13 @@ Widerstandsteiler::~Widerstandsteiler()
   delete ui;
 }
 
+/**
+ * @brief Uin Die Funktion wird verwendet um Ausnahmen abzufangen und alle Daten
+in ihren Vorgesehenen typ umzuwamdeln
+ */
 void Widerstandsteiler::on_pushButton_clicked()  // Event Bei drücken des Push
                                                  // Buttons
 {
-  // QString Rmax = ui->MaxResStr->text();  // Einlesen der Eingabe Werte
   QString Uin = ui->UinStr->text();
   QString Uout = ui->UoutStr->text();
   QString EReihe = ui->EReiheInp->text();
@@ -39,70 +46,82 @@ void Widerstandsteiler::on_pushButton_clicked()  // Event Bei drücken des Push
   int UinSize = 0;
   int UoutSize = 0;
   bool isNum = false;
-  UinSize = Uin.size();
+
+  Ecalc ecalc;
+
+  UinSize = Uin.size();  // Bestimmen ob Leerer wert. Lehr wird abgefangen
   UoutSize = Uout.size();
 
   std::string EReiheStr;
 
-  EReiheStr = EReihe.toStdString();
+  EReiheStr = EReihe.toStdString();  // Umwandlung in String
 
   UinD = Uin.toDouble(&isNum);  // Umwandlung unser String Werte zu Double
   UoutD = Uout.toDouble(&isNum);
-  // RmaxD = Rmax.toDouble();
 
-  if (isNum == false || UinD < UoutD || UinD < 0 || UoutD < 0 ||
-      (UinSize == 0 && UoutSize == 0))  // Fehler Abfangen bei Falscheingabe
+  if (EReiheStr == "E3")
   {
-    QMessageBox::warning(this, "Error", "Falsche Eingabe");
+    EreiheInt = 3;
   }
-  else  // Ausgänge Beschreiben
+  else if (EReiheStr == "E6")
   {
-    if (EReiheStr == "E3")
-    {
-      EreiheInt = 3;
-    }
-    else if (EReiheStr == "E6")
-    {
-      EreiheInt = 6;
-    }
-    else if (EReiheStr == "E12")
-    {
-      EreiheInt = 12;
-    }
-    else if (EReiheStr == "E24")
-    {
-      EreiheInt = 24;
-    }
-    else if (EReiheStr == "E48")
-    {
-      EreiheInt = 48;
-    }
-    else if (EReiheStr == "E96")
-    {
-      EreiheInt = 96;
-    }
-    else if (EReiheStr == "E192")
-    {
-      EreiheInt = 192;
-    }
+    EreiheInt = 6;
+  }
+  else if (EReiheStr == "E12")
+  {
+    EreiheInt = 12;
+  }
+  else if (EReiheStr == "E24")
+  {
+    EreiheInt = 24;
+  }
+  else if (EReiheStr == "E48")
+  {
+    EreiheInt = 48;
+  }
+  else if (EReiheStr == "E96")
+  {
+    EreiheInt = 96;
+  }
+  else if (EReiheStr == "E192")
+  {
+    EreiheInt = 192;
+  }
 
-    Ecalc ecalc;
-    ecalc.calculate(UinD, UoutD, EreiheInt, RmaxD);
-
-    ResRet1 = ecalc.getResistor1();
+  if (ecalc.calculate(UinD, UoutD, EreiheInt, RmaxD) ==
+      true)  // Ausgänge Beschreiben
+  {
+    ResRet1 = ecalc.getResistor1();  // Funktionsaufrufe
     ResRet2 = ecalc.getResistor2();
     UoutRet = ecalc.getOutput();
     Fehler = ecalc.getErrorRel() * 100;
 
-    ui->Res1->setNum(ResRet1);
+    Fehler = (Fehler * 100 + 0.5);  // Runden auf zwei stellen
+    int FehlerInt = (int) Fehler;
+    Fehler = ((double) FehlerInt) / 100;
+
+    UoutRet = UoutRet * 100 + 0.5;
+    int UoutRetInt = (int) UoutRet;
+    UoutRet = ((double) UoutRetInt) / 100;
+
+    ui->Res1->setNum(ResRet1);  // Rückgabewerte ausgeben
     ui->Res2->setNum(ResRet2);
     ui->FehlerVal->setNum(Fehler);
     ui->UoutVal->setNum(UoutRet);
   }
+
+  else
+  {
+    QMessageBox::warning(this, "Error", "Falsche Eingabe");
+  }
 }
 
 static int i = 0;
-
+/**
+ * @brief Widerstandsteiler::on_EReiheDown_clicked Bei Klick wird aus dem String
+ der Entsprechende E Wert ausgewählt Pro Klick wird der string um 1
+ dekrementiert
+ */
 void Widerstandsteiler::on_EReiheDown_clicked()
 {
   if (i > 0)
@@ -112,6 +131,12 @@ void Widerstandsteiler::on_EReiheDown_clicked()
     ui->EReiheInp->setText(EString[i]);
   }
 }
+
+/**
+ * @brief Widerstandsteiler::on_EReiheUp_clicked Bei Klick wird aus dem String
+ der Entsprechende E Wert ausgewählt Pro Klick wird der string um 1
+ dekrementiert
+ */
 
 void Widerstandsteiler::on_EReiheUp_clicked()
 {

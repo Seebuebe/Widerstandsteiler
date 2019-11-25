@@ -1,4 +1,4 @@
-/*
+/**
  * Ecalc.h
  *
  *  Created on: Oct 16, 2019
@@ -11,7 +11,22 @@
 class Ecalc {
  public:
   Ecalc(void);
+<<<<<<< HEAD
   int calculate(double in, double out, double es, double maxR);
+=======
+  /**
+   * @brief calculate
+   * @param in
+   * @param out
+   * @param es
+   * @param maxR
+   */
+  bool calculate(double in, double out, double es, double maxR);
+  /**
+   * @brief getResistor1
+   * @return
+   */
+>>>>>>> f37e30c8021bf077c850b6425163bf8e56048733
   double getResistor1();
   double getResistor2();
   double getErrorABS();
