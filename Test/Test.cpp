@@ -15,7 +15,7 @@ TEST(Ecalc, E3Reihe)
   EXPECT_EQ(obj.getResistor1(), 22);
   EXPECT_EQ(obj.getResistor2(), 2.2);
   EXPECT_EQ(obj.getOutput(), 0.91);
-  EXPECT_EQ(obj.getErrorRel(), 0.1);
+  EXPECT_EQ(obj.getErrorRel(), 9.89);
 }
 
 TEST(Ecalc, E6Reihe)
@@ -26,7 +26,7 @@ TEST(Ecalc, E6Reihe)
   EXPECT_EQ(obj.getResistor1(), 100);
   EXPECT_EQ(obj.getResistor2(), 1);
   EXPECT_EQ(obj.getOutput(), 1.00);
-  EXPECT_EQ(obj.getErrorRel(), 0.01);
+  EXPECT_EQ(obj.getErrorRel(), 1.01);
 }
 
 TEST(Ecalc, E12Reihe)
@@ -48,7 +48,7 @@ TEST(Ecalc, E24Reihe)
   EXPECT_EQ(obj.getResistor1(), 4300);
   EXPECT_EQ(obj.getResistor2(), 8.2);
   EXPECT_EQ(obj.getOutput(), 1.91);
-  EXPECT_EQ(obj.getErrorRel(), 0.00);
+  EXPECT_EQ(obj.getErrorRel(), 0.52);
 }
 
 TEST(Ecalc, E48Reihe)
@@ -69,8 +69,8 @@ TEST(Ecalc, E96Reihe)
   
   EXPECT_EQ(obj.getResistor1(), 715);
   EXPECT_EQ(obj.getResistor2(), 1.15);
-  EXPECT_EQ(obj.getOutput(), 1.67);
-  EXPECT_EQ(obj.getErrorRel(), 0.00);
+  EXPECT_EQ(obj.getOutput(), 1.61);
+  EXPECT_EQ(obj.getErrorRel(), 0.62);
 }
 
 TEST(Ecalc, E192Reihe)
@@ -119,9 +119,9 @@ TEST(Ecalc, UinANDUoutequalZero) {
   ASSERT_EQ(obj.calculate(0, 0, 3, 0), false); 
 }
 
-TEST(Ecalc, UinDIFFUoutgreater4700) {
+TEST(Ecalc, UinDIFFUoutgreater5000) {
 	Ecalc obj;
-  ASSERT_EQ(obj.calculate(5000, 1, 3, 0), false); 
+  ASSERT_EQ(obj.calculate(5002, 1, 3, 0), false); 
 }
 
 
