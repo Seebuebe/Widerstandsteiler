@@ -1,3 +1,0 @@
-/home/user/Documents/Widerstandsteiler/Test/CMakeFiles/rebuild_cache.dir
-/home/user/Documents/Widerstandsteiler/Test/CMakeFiles/runTests.dir
-/home/user/Documents/Widerstandsteiler/Test/CMakeFiles/edit_cache.dir
