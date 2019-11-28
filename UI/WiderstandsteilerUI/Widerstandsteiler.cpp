@@ -1,5 +1,7 @@
 #include "Widerstandsteiler.h"
+#include <cctype>
 #include <cmath>
+#include <cstring>
 #include <iostream>
 #include "../../algorithm/Ecalc.h"  //Backend Code
 #include "QMessageBox"  //Wird verwendet um die Anzeigebox einzufügen
@@ -87,21 +89,25 @@ void Widerstandsteiler::on_pushButton_clicked()  // Event Bei drücken des Push
   {
     EreiheInt = 192;
   }
-
-  if (ecalc.calculate(UinD, UoutD, EreiheInt, RmaxD) ==
-      true)  // Ausgänge Beschreiben
+  if (isNum)
   {
-    ResRet1 = ecalc.getResistor1();  // Funktionsaufrufe
-    ResRet2 = ecalc.getResistor2();
-    UoutRet = ecalc.getOutput();
-    Fehler = ecalc.getErrorRel() * 100;
+    if (ecalc.calculate(UinD, UoutD, EreiheInt, RmaxD))  // Ausgänge Beschreiben
+    {
+      ResRet1 = ecalc.getResistor1();  // Funktionsaufrufe
+      ResRet2 = ecalc.getResistor2();
+      UoutRet = ecalc.getOutput();
+      Fehler = ecalc.getErrorRel();
 
-    ui->Res1->setNum(ResRet1);  // Rückgabewerte ausgeben
-    ui->Res2->setNum(ResRet2);
-    ui->FehlerVal->setNum(Fehler);
-    ui->UoutVal->setNum(UoutRet);
+      ui->Res1->setNum(ResRet1);  // Rückgabewerte ausgeben
+      ui->Res2->setNum(ResRet2);
+      ui->FehlerVal->setNum(Fehler);
+      ui->UoutVal->setNum(UoutRet);
+    }
+    else
+    {
+      QMessageBox::warning(this, "Error", "Falsche Eingabe");
+    }
   }
-
   else
   {
     QMessageBox::warning(this, "Error", "Falsche Eingabe");
