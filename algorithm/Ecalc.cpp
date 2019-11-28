@@ -32,17 +32,17 @@ double Ecalc::getResistor2()
 
 double Ecalc::getOutput()
 {
-  return round((uIn * (r2 / (r1 + r2))) * 1000) / 1000;
+  return round((uIn * (r2 / (r1 + r2))) * 100) / 100;
 }
 
 double Ecalc::getErrorABS()
 {
-  return round(abs(uOut - getOutput()) * 1000) / 1000;
+  return round(abs(uOut - getOutput()) * 100) / 100;
 }
 
 double Ecalc::getErrorRel()
 {
-  return round((getErrorABS() / getOutput()) * 1000) / 1000;
+  return round((getErrorABS() / getOutput()) * 100) / 100;
 }
 
 void Ecalc::calc()
