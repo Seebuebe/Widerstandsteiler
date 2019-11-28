@@ -42,7 +42,7 @@ double Ecalc::getErrorABS()
 
 double Ecalc::getErrorRel()
 {
-  return round((getErrorABS() / getOutput()) * 100) / 100;
+  return round((getErrorABS() / getOutput()) * 10000) / 100;
 }
 
 void Ecalc::calc()
