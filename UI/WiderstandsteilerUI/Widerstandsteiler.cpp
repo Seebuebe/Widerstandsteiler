@@ -96,14 +96,6 @@ void Widerstandsteiler::on_pushButton_clicked()  // Event Bei drücken des Push
     UoutRet = ecalc.getOutput();
     Fehler = ecalc.getErrorRel() * 100;
 
-    Fehler = (Fehler * 100 + 0.5);  // Runden auf zwei stellen
-    int FehlerInt = (int) Fehler;
-    Fehler = ((double) FehlerInt) / 100;
-
-    UoutRet = UoutRet * 100 + 0.5;
-    int UoutRetInt = (int) UoutRet;
-    UoutRet = ((double) UoutRetInt) / 100;
-
     ui->Res1->setNum(ResRet1);  // Rückgabewerte ausgeben
     ui->Res2->setNum(ResRet2);
     ui->FehlerVal->setNum(Fehler);
