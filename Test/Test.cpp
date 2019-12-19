@@ -25,7 +25,7 @@ TEST(Ecalc, E6Reihe)
   
   EXPECT_EQ(obj.getResistor1(), 100);
   EXPECT_EQ(obj.getResistor2(), 1);
-  EXPECT_EQ(obj.getOutput(), 1.00);
+  EXPECT_EQ(obj.getOutput(), 0.99);
   EXPECT_EQ(obj.getErrorRel(), 1.01);
 }
 
