@@ -8,15 +8,60 @@
 #ifndef ECALC_H_
 #define ECALC_H_
 
-class Ecalc {
+class Ecalc
+{
  public:
+  /**
+   * @brief Ecalc
+   * Construktor
+   */
+
   Ecalc(void);
+  /**
+   * @brief calculate
+   * Berechne die Widerstaende
+   * @param in
+   * @param out
+   * @param es
+   * @param maxR
+   * @return
+   */
   int calculate(double in, double out, double es, double maxR);
+  /**
+   * @brief getResistor1
+   * Wert von Widerstand
+   * @return double
+   */
   double getResistor1();
+  /**
+   * @brief getResistor2
+   * Wert von Widerstand 2
+   * @return double
+   */
   double getResistor2();
+  /**
+   * @brief getErrorABS
+   * Fehler in Absolut
+   * @return double
+   */
   double getErrorABS();
+  /**
+   * @brief getErrorRel
+   * Relativer Fehler
+   * @return double
+   */
   double getErrorRel();
+  /**
+   * @brief getOutput
+   * Ausgangsspannung
+   * @return double
+   */
   double getOutput();
+  /**
+   * @brief getSeries
+   * Widerstandsserie
+   * @return int
+   */
   int getSeries();
 
  private:

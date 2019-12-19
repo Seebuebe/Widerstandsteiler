@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['widerstandsteiler',['Widerstandsteiler',['../classWiderstandsteiler.html#a7da8f20e9892c8eabce495cf8cbb3f2e',1,'Widerstandsteiler']]]
+  ['ecalc',['Ecalc',['../class_ecalc.html#ab085e955a2d023acfe6a19cc896f1106',1,'Ecalc']]]
 ];
