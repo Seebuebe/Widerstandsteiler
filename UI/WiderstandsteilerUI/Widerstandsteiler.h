@@ -13,6 +13,12 @@ class Widerstandsteiler : public QMainWindow
   Q_OBJECT
 
  public:
+  /**
+   * @brief Widerstandsteiler
+   * @param parent
+   * Diese Funktion verknüpft das Backend mit dem Frontend.
+   * Bei falscher Wertübergabe wird ein error zurückgegeben.
+   */
   explicit Widerstandsteiler(QWidget* parent = nullptr);
   ~Widerstandsteiler();
 
