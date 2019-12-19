@@ -18,7 +18,10 @@ Widerstandsteiler::Widerstandsteiler(QWidget* parent)
 {
   ui->setupUi(this);
 }
-
+/**
+ * @brief Widerstandsteiler::~Widerstandsteiler
+ * Destuktor des Widerstandsteilers
+ */
 Widerstandsteiler::~Widerstandsteiler()
 {
   delete ui;

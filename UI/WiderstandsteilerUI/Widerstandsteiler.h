@@ -20,6 +20,7 @@ class Widerstandsteiler : public QMainWindow
    * Bei falscher Wertübergabe wird ein error zurückgegeben.
    */
   explicit Widerstandsteiler(QWidget* parent = nullptr);
+
   ~Widerstandsteiler();
 
  private slots:
